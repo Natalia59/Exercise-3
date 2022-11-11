@@ -1,0 +1,36 @@
+Console.WriteLine($"Введите целое число N: ");
+
+int n = int.Parse(Console.ReadLine() ?? "");
+Console.WriteLine(PrintNaturals(1, n));
+
+string PrintNaturals(int start, int end)
+{
+    if (start == end)
+    {
+        return start.ToString();
+    }
+
+    return (start + ", " + PrintNaturals(start + 1, end));
+}
+/* Input N. Print all Naturals from 1 to N.
+
+Console.Write($"Input N: ");
+int n = int.Parse(Console.ReadLine() ?? "");
+Console.WriteLine($"{n}");
+
+Console.WriteLine(PrintNaturals(1, n)); // метод возвращает string, можно использовать Console.WriteLine.
+maria to Everyone (19:44)
+//----------------------------METHODS-------------------------
+
+//------------------------Naturals printing-------------------
+static string PrintNaturals(int start, int end) // start - играет роль счётчика.
+{
+    if (start == end) // условие выхода из метода, когда мы доходим от 1 (start) до N (end).
+    {
+        return start.ToString(); //явное преобразование из int (тип start) в string (тип метода);
+        // возвращаем последнее значение start равное end в самом конце, которое добавится к уже готовой строке, получившейся по рекурсии.
+    }
+    return (start + ", " + PrintNaturals(start + 1, end)); // организация рекурсивного вызова;
+    // в return сначала идут все вычисления и вызовы методов, а только потом идёт возврат итога;
+    // здесь в одном выражении числа и строки с конкатенацией, то тут неявное преобразование, перевод ToString() не нужен.
+} */

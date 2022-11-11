@@ -1,0 +1,35 @@
+// Задача 67: Напишите программу, которая будет принимать на вход число
+// и возвращать сумму его цифр.
+
+
+Console.Clear();
+int num = GetNumberFromUser("Введите число : ", "Ошибка ввода!");
+
+Console.WriteLine (num);
+Console.WriteLine (SumElements(num));
+
+/////////// Methods ///////////////
+
+int GetNumberFromUser(string message, string errorMessage)
+{
+    while (true)
+    {
+        Console.Write(message);
+        bool isCorrect = int.TryParse(Console.ReadLine(), out int userNumber);
+        if (isCorrect)
+            return userNumber;
+        Console.WriteLine(errorMessage);
+    }
+}
+
+
+int SumElements(int num)
+{
+    int sum = 0;
+    if (num / 10 == 0)
+    {
+        return (sum + num % 10);
+    }
+
+    return (sum + num % 10 + SumElements(num / 10));
+}
