@@ -2,13 +2,13 @@
  m = 2, n = 3 -> A(m,n) = 9 */
 
 Console.Clear();
-Console.WriteLine($"Задача 68: Напишите программу вычисления функции Аккермана с помощью рекурсии. Даны два неотрицательных числа m и n.");
+
 int m = InputNumbers("Введите m: ");
 int n = InputNumbers("Введите n: ");
 
-int functionAkkerman = Ack(m, n);
+int functionAckerman = Ack(m, n);
 
-Console.Write($"Функция Аккермана = {functionAkkerman} ");
+Console.Write($"Функция Аккермана = {functionAckerman} ");
 
 int Ack(int m, int n)
 {
